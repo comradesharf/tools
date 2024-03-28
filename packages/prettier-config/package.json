@@ -1,0 +1,9 @@
+{
+    "name": "@comradesharf/prettier-config",
+    "version": "0.0.1",
+    "type": "module",
+    "files": [
+        "index.js"
+    ],
+    "private": false
+}

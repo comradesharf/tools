@@ -1,0 +1,23 @@
+{
+    "name": "@comradesharf/create-next-app",
+    "version": "0.0.1-alpha.0",
+    "devDependencies": {
+        "@inquirer/prompts": "^4.3.0",
+        "@types/node": "^20.11.30",
+        "@types/validate-npm-package-name": "^4.0.2",
+        "esbuild": "^0.20.2",
+        "fast-glob": "^3.3.2",
+        "picocolors": "^1.0.0",
+        "validate-npm-package-name": "^5.0.0"
+    },
+    "scripts": {
+        "dev": "mkdir -p dist && cp -R template dist && node watch.mjs",
+        "release": "mkdir -p dist && cp -R template dist && node build.mjs"
+    },
+    "type": "module",
+    "bin": "dist/index.js",
+    "files": [
+        "dist"
+    ],
+    "private": false
+}

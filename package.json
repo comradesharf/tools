@@ -1,0 +1,23 @@
+{
+    "name": "@comradesharf/tools",
+    "version": "1.0.0",
+    "license": "MIT",
+    "private": "true",
+    "devDependencies": {
+        "husky": "^9.0.11",
+        "lint-staged": "^15.2.2",
+        "prettier": "^3.2.5",
+        "typescript": "^5.4.3"
+    },
+    "lint-staged": {
+        "*.{js,css,md,ts,tsx,json}": "prettier --write"
+    },
+    "scripts": {
+        "prepare": "husky install"
+    },
+    "engines": {
+        "node": ">=21.7.1"
+    },
+    "packageManager": "pnpm@8.15.5",
+    "type": "module"
+}
