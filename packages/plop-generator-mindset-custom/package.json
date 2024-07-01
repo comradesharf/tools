@@ -24,5 +24,6 @@
     "type": "module",
     "files": [
         "build"
-    ]
+    ],
+    "private": false
 }
