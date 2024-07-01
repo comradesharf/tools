@@ -1,0 +1,28 @@
+{
+    "name": "@comradesharf/plop-generator-mindset-custom",
+    "version": "1.0.0",
+    "devDependencies": {
+        "@comradesharf/tsconfigs": "workspace:*",
+        "@types/inquirer-fuzzy-path": "^2.3.9",
+        "esbuild": "^0.20.2",
+        "plop": "^4.0.1"
+    },
+    "dependencies": {
+        "inquirer-fuzzy-path": "^2.3.0"
+    },
+    "peerDependencies": {
+        "plop": "^4.0.1"
+    },
+    "scripts": {
+        "build": "esbuild src/index.ts --platform=node --outdir=build --target=node20 --loader:.hbs=file --bundle --packages=external --format=esm",
+        "watch": "yarn build --watch"
+    },
+    "imports": {
+        "#*": "./src/*"
+    },
+    "main": "build/index.js",
+    "type": "module",
+    "files": [
+        "build"
+    ]
+}

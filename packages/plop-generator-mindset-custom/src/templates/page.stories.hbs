@@ -1,0 +1,25 @@
+import Page from "{{ dir.absolute }}/page.tsx";
+{{#includes types "layout"}}
+    import Layout from "{{ dir.absolute }}/layout.tsx";
+{{/includes}}
+import type { Meta, StoryObj } from "@storybook/react";
+
+const meta = {
+    component: Page,
+    parameters: {},
+    {{#includes types "layout"~}}
+        decorators: [
+            (Story) => (
+                <Layout>
+                    <Story/>
+                </Layout>
+            ),
+        ],
+    {{/includes}}
+} satisfies Meta<typeof Page>;
+
+export default meta;
+
+type Story = StoryObj<typeof Page>;
+
+export const Primary: Story = {};

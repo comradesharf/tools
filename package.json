@@ -15,9 +15,6 @@
     "scripts": {
         "prepare": "husky install"
     },
-    "engines": {
-        "node": ">=21.7.1"
-    },
-    "packageManager": "pnpm@8.15.5",
+    "packageManager": "pnpm@9.4.0",
     "type": "module"
 }

@@ -1,0 +1,24 @@
+import { {{pascalCase name}} } from '#app/_emails/{{pascalCase name}}.tsx';
+import { EmailPreview } from '#app/_components/EmailPreview.tsx';
+import type { Meta, StoryObj } from '@storybook/react';
+
+const meta = {
+    component: {{pascalCase name}},
+    args: {},
+    decorators: (Story) => (
+        <EmailPreview>
+            <Story/>
+        </EmailPreview>
+    ),
+    parameters: {
+        backgrounds: {
+            default: 'light',
+        },
+    },
+} satisfies Meta<typeof {{pascalCase name}}>;
+
+export default meta;
+
+type Story = StoryObj<typeof {{pascalCase name}}>;
+
+export const Primary: Story = {};

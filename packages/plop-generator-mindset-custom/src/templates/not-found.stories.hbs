@@ -1,0 +1,13 @@
+import NotFound from "{{ dir.absolute }}/not-found.tsx";
+import type { Meta, StoryObj } from "@storybook/react";
+
+const meta = {
+    component: NotFound,
+    parameters: {},
+} satisfies Meta<typeof NotFound>;
+
+export default meta;
+
+type Story = StoryObj<typeof NotFound>;
+
+export const Primary: Story = {};

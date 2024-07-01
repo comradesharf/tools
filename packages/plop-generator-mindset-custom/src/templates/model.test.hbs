@@ -1,0 +1,8 @@
+import { expect, test, vi } from 'vitest';
+import { connection } from 'mongoose';
+import { {{name}} } from '#app/_models/{{name}}.{{ extension }}';
+
+test('test', async () => {
+    await connection.transaction(async (session) => {
+    });
+});

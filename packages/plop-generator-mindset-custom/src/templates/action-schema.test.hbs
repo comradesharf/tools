@@ -1,0 +1,6 @@
+import { {{pascalCase name}}FormDataSchema } from '#app/_schemas/{{pascalCase name}}FormDataSchema.ts';
+import { expect, test } from 'vitest';
+
+test('should validate {{pascalCase name}}FormDataSchema', () => {
+    expect({{pascalCase name}}FormDataSchema.parse({})).toEqual({});
+});

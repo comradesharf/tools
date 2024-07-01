@@ -1,0 +1,9 @@
+import { faker } from '@faker-js/faker/locale/de';
+import { {{ name }} } from '#app/_models/{{ name }}.{{ extension }}';
+import { FlattenMaps } from 'mongoose';
+
+export function generate{{ name }}() {
+    return {
+        _id: faker.database.mongodbObjectId() as any,
+    } as FlattenMaps<{{name}}>;
+}

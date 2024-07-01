@@ -1,0 +1,60 @@
+import {
+    Body,
+    Button,
+    Container,
+    Head,
+    Hr,
+    Html,
+    Img,
+    Link,
+    Preview,
+    Section,
+    Tailwind,
+    Text,
+} from '@react-email/components';
+import * as React from 'react';
+import { SiteUrl } from '#app/_lib/Urls';
+import { getYear } from 'date-fns';
+
+export type {{pascalCase name}}Props = {
+    firstName: string;
+    lastName: string;
+};
+
+export function {{pascalCase name}}({firstName = 'Tan', lastName = 'Boon'}: {{pascalCase name}}Props) {
+    return (
+        <Html lang="de">
+            <Head/>
+            <Preview>RIX - {{name}}</Preview>
+            <Tailwind>
+                <Body className="bg-[#f6f9fc] font-sans">
+                    <Container className="bg-[#ffffff] mx-auto my-0 px-0 pt-5 pb-12 mb-14">
+                        <Section className="py-0 px-4">
+                            <Img src={`${SiteUrl}/images/brand.png`} width="70" alt="AbiBall"/>
+                            <Hr className="border border-[#e6ebf1] mx-0 my-5"/>
+                            <Text className="text-[#525f7f] text-[16px] text-left">
+                                Hallo{' '}
+                                <strong>
+                                    {firstName} {lastName}
+                                </strong>
+                                ,
+                            </Text>
+                        </Section>
+                        <Section className="py-0 px-4">
+                            <Text className="text-[#525f7f] text-[16px] leading-[24px] text-left">
+                                &mdash; Wir wünschen Dir einen angenehmen Tag, Dein RIX Team
+                            </Text>
+                            <Hr className="border border-[#e6ebf1] mx-0 my-5"/>
+                            <Text className="text-[#8898aa] text-[12px] leading-none text-center">
+                                © {getYear(new Date())} RIX GmbH, Alle Rechte vorbehalten
+                            </Text>
+                            <Text className="text-[#8898aa] text-[12px] leading-none text-center">
+                                Berlin, Deutschland
+                            </Text>
+                        </Section>
+                    </Container>
+                </Body>
+            </Tailwind>
+        </Html>
+    );
+}

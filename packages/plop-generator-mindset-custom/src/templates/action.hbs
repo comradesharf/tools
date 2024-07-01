@@ -1,0 +1,17 @@
+'use server';
+
+import serverAction from '#app/_lib/serverAction.ts';
+import { cookies } from 'next/headers';
+{{#if schema}}
+    import { {{ pascalCase name }}FormDataSchema } from '#app/_schemas/{{ pascalCase name }}FormDataSchema.ts';
+{{/if}}
+
+export const {{name}} = serverAction(async ({userAbilities, user}{{#if schema}}, formData{{/if}}) => {
+    throw new Error("Not implemented");
+}, {
+    cookies,
+    actionName: '{{name}}',
+    {{#if schema}}
+       schema: {{ pascalCase name }}FormDataSchema,
+    {{/if}}
+});

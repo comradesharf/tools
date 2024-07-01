@@ -1,0 +1,6 @@
+import { {{pascalCase name}}Schema } from '#app/_schemas/{{pascalCase name}}Schema.ts';
+import { expect, test } from 'vitest';
+
+test('should validate {{pascalCase name}}Schema', () => {
+    expect({{pascalCase name}}Schema.parse({})).toEqual({});
+});

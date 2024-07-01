@@ -1,0 +1,38 @@
+import '@casl/mongoose';
+import {
+    Types
+} from 'mongoose';
+import { modelOptions, prop, PropType, Ref } from '@typegoose/typegoose';
+
+declare module '@casl/mongoose' {
+    interface RecordTypes {
+            {{name}}: true;
+    }
+}
+
+declare module '#app/_models/types.ts' {
+    export interface SubjectMapping {
+            {{name}}: {{name}};
+    }
+}
+
+@modelOptions({
+    schemaOptions: {
+        timestamps: {
+            createdAt: 'created_at',
+            updatedAt: 'updated_at',
+        },
+    },
+    options: {
+        customName: '{{name}}',
+    }
+})
+class {{name}} {
+    _id!: Types.ObjectId;
+
+    created_at!: Date;
+
+    updated_at!: Date;
+}
+
+export { {{name}} };

@@ -1,0 +1,5 @@
+import * as z from "zod";
+
+export const {{pascalCase name}}FormDataSchema = z.object({} as const);
+
+export type {{pascalCase name}}FormData = z.infer<typeof {{pascalCase name}}FormDataSchema>;
