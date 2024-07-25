@@ -571,7 +571,7 @@ export default function (plop: NodePlopAPI) {
         actions: [
             {
                 type: 'add',
-                path: 'src/app/_queries/{{ name }}.{{ extension }}',
+                path: 'src/app/_queries/{{ name }}.ts',
                 templateFile: queryHbs,
                 skipIfExists: true,
             },
