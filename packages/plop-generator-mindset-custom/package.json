@@ -1,6 +1,6 @@
 {
     "name": "@comradesharf/plop-generator-mindset-custom",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "devDependencies": {
         "@comradesharf/tsconfigs": "workspace:*",
         "@types/inquirer-fuzzy-path": "^2.3.9",

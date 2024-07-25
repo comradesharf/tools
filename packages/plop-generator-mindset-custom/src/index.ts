@@ -13,15 +13,17 @@ import layoutHbs from '#templates/layout.hbs';
 import layoutStoriesHbs from '#templates/layout.stories.hbs';
 import loadingHbs from '#templates/loading.hbs';
 import loadingStoriesHbs from '#templates/loading.stories.hbs';
+import modelDbHbs from '#templates/model.db.hbs';
 import modelFixturesHbs from '#templates/model.fixtures.hbs';
 import modelHbs from '#templates/model.hbs';
-import modelTestHbs from '#templates/model.test.hbs';
 import notFoundHbs from '#templates/not-found.hbs';
 import notFoundStoriesHbs from '#templates/not-found.stories.hbs';
 import pageHbs from '#templates/page.hbs';
 import pageStoriesHbs from '#templates/page.stories.hbs';
 import pdfHbs from '#templates/pdf.hbs';
 import pdfStoriesHbs from '#templates/pdf.stories.hbs';
+import queryHbs from '#templates/query.hbs';
+import queryMockHbs from '#templates/query.mock.hbs';
 import schemaHbs from '#templates/schema.hbs';
 import schemaTestHbs from '#templates/schema.test.hbs';
 import templateHbs from '#templates/template.hbs';
@@ -533,14 +535,50 @@ export default function (plop: NodePlopAPI) {
             },
             {
                 type: 'add',
-                path: 'src/app/_models/{{name}}.test.ts',
-                templateFile: modelTestHbs,
+                path: 'src/app/_models/{{name}}.db.ts',
+                templateFile: modelDbHbs,
                 skipIfExists: true,
             },
             {
                 type: 'add',
                 path: 'src/app/_models/{{name}}.fixtures.ts',
                 templateFile: modelFixturesHbs,
+                skipIfExists: true,
+            },
+        ],
+    });
+
+    plop.setGenerator('query', {
+        description: 'Create a new query in the app',
+        prompts: [
+            {
+                type: 'input',
+                name: 'name',
+                message: 'What is your query name?',
+                validate: (value?: string) => {
+                    if (!value?.trim().length) {
+                        return 'A query name is required';
+                    }
+
+                    if (!CamelCasePattern.test(value)) {
+                        return 'The model name must be in camelCase';
+                    }
+
+                    return true;
+                },
+            },
+        ],
+        actions: [
+            {
+                type: 'add',
+                path: 'src/app/_queries/{{ name }}.{{ extension }}',
+                templateFile: queryHbs,
+                skipIfExists: true,
+            },
+            {
+                type: 'add',
+                path: 'src/app/_queries/{{ name }}.mock.ts',
+                templateFile: queryMockHbs,
                 skipIfExists: true,
             },
         ],
