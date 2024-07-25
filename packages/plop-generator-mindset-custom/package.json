@@ -1,6 +1,6 @@
 {
     "name": "@comradesharf/plop-generator-mindset-custom",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "devDependencies": {
         "@comradesharf/tsconfigs": "workspace:*",
         "@types/inquirer-fuzzy-path": "^2.3.9",
@@ -15,7 +15,8 @@
     },
     "scripts": {
         "build": "esbuild src/index.ts --platform=node --outdir=build --target=node20 --loader:.hbs=file --bundle --packages=external --format=esm",
-        "watch": "yarn build --watch"
+        "watch": "pnpm build --watch",
+        "prepublishOnly": "pnpm build"
     },
     "imports": {
         "#*": "./src/*"
